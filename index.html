@@ -1,1 +1,29 @@
-Hello World
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Настроение</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script>
+            $(function(){
+                $.getJSON("quotes.json", function(data) {
+                        var rand = Math.random() * data.length;
+                        rand = Math.floor(rand);
+                        $('body').append("<p>" + data[rand].phrase + "</p>").css({
+                            "margin": "auto",
+                            "margin-top": "25px",
+                            "font-size": "16pt",
+                            "text-align": "center",
+                            "width": "600px",
+                            "height": "200px",
+                            "border": "2px solid #D4D4D4",
+                            "border-radius": "50px",
+                            "box-shadow": "0 0 15px #1081cc",
+                            "padding": "20px 40px"
+                    });
+                });
+            });
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

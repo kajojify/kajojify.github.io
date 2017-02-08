@@ -1,4 +1,7 @@
-p{
+a{
+    text-decoration: none;
+    color: darkorchid;
+    display: block;
     background-color: #62edbd;
     width: 600px;
     margin: auto;
@@ -8,14 +11,10 @@ p{
     font-size: 22pt;
     padding-top: 60px;
 }
-a{
-    text-decoration: none;
-    color: darkorchid;
-}
 div{
     margin-top: 100px;
 }
-p:hover{
+a:hover{
     background-color: aquamarine;
 }
 

@@ -1,67 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-        <meta charset="utf-8" />
-        <title>mitmproxy-kajojify</title>
-        <link rel="stylesheet" href="https://kajojify.github.io/theme/css/main.css" />
-        <link href="https://kajojify.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="mitmproxy-kajojify Atom Feed" />
-
-        <!--[if IE]>
-            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-</head>
-
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="https://kajojify.github.io/">mitmproxy-kajojify </a></h1>
-                <nav><ul>
-                    <li><a href="https://kajojify.github.io/category/some_category.html">Some_Category</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
-
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="https://kajojify.github.io/hello-world.html">Hello world!</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2016-04-22T10:40:00+03:00">
-                Published: Птн 22 Апрель 2016
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="https://kajojify.github.io/author/username.html">username</a>
-        </address>
-<p>In <a href="https://kajojify.github.io/category/some_category.html">Some_Category</a>.</p>
-<p>tags: <a href="https://kajojify.github.io/tag/blogging.html">blogging</a> <a href="https://kajojify.github.io/tag/test.html">test</a> </p>
-</footer><!-- /.post-info --><p>hhh</p>                </article>
-            </aside><!-- /#featured -->
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="http://getpelican.com/">Pelican</a></li>
-                            <li><a href="http://python.org/">Python.org</a></li>
-                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-                            <li><a href="#">You can modify those links in your config file</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="https://kajojify.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
-
-                            <li><a href="#">You can add links in your config file</a></li>
-                            <li><a href="#">Another social link</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
-</body>
+<html>
+    <head>
+        <title>Настроение</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script>
+            $(function(){
+                $.getJSON("quotes.json", function(data) {
+                        var rand = Math.random() * data.length;
+                        rand = Math.floor(rand);
+                        $('body').append("<p>" + data[rand].phrase + "</p>").css({
+                            "margin": "auto",
+                            "margin-top": "25px",
+                            "font-size": "16pt",
+                            "text-align": "center",
+                            "width": "600px",
+                            "height": "200px",
+                            "border": "2px solid #D4D4D4",
+                            "border-radius": "50px",
+                            "box-shadow": "0 0 15px #1081cc",
+                            "padding": "20px 40px"
+                    });
+                });
+            });
+        </script>
+    </head>
+    <body>
+    </body>
 </html>
